@@ -1,89 +1,117 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Discover the beauty of the Philippines - pristine beaches, vibrant culture, and unforgettable adventures await.">
-  <title>Tara, Dayo - Discover the Philippines</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tara, Dayo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
 </head>
 <body>
-  <nav>
-    <div class="nav-container">
-      <a href="index.html" class="logo">Tara, Dayo</a>
-      <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="culture.html">Culture</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+
+<!-- Navbar -->
+<nav>
+  <h1>Tara, Dayo</h1>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="#">Culture</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="slideshow">
+    <div class="slide fade" style="background-image: url('Images/BanaueRiceTerraces.png');"></div>
+    <div class="slide fade" style="background-image: url('Images/mayon.png');"></div>
+    <div class="slide fade" style="background-image: url('Images/palawan.png');"></div>
+  </div>
+  <div class="hero-content">
+    <h1>More Than Islands,<br>A Nation of Stories</h1>
+    <p>Discover the timeless beauty of the Philippines — from ancient terraces to pristine coral reefs, every site has heritage and natural significance.</p>
+    <div class="btns">
+      <button class="filled">Explore Wonders</button>
+      <button class="outlined">Get to Know Us</button>
     </div>
-  </nav>
+  </div>
+</section>
 
-  <section class="hero">
-    <img src="images/hero-volcano.jpg" alt="Mayon Volcano in the Philippines" class="hero-image">
-    <div class="hero-content">
-      <h1>Discover the Philippines</h1>
-      <p>Experience pristine beaches, vibrant culture, and unforgettable adventures</p>
-      <a href="gallery.html" class="cta-button">Explore Now</a>
+<!-- Numbers Section -->
+<section class="numbers">
+  <h2>Philippines by Numbers</h2>
+  <p class="subtitle">A glimpse into our natural wealth</p>
+  <div class="stats">
+    <div class="stat">
+      <div class="icon">🏝️</div>
+      <h3>7,641</h3>
+      <p>Islands</p>
     </div>
-  </section>
+    <div class="stat">
+      <div class="icon">🌿</div>
+      <h3>400+</h3>
+      <p>Protected Areas</p>
+    </div>
+    <div class="stat">
+      <div class="icon">🏛️</div>
+      <h3>2</h3>
+      <p>UNESCO Sites</p>
+    </div>
+    <div class="stat">
+      <div class="icon">🦅</div>
+      <h3>50+</h3>
+      <p>Endemic Species</p>
+    </div>
+  </div>
+</section>
 
-  <div class="container">
-    <section class="stats">
-      <div class="stat-card">
-        <div class="stat-number">7,641</div>
-        <div class="stat-label">Islands to Explore</div>
+<!-- Wonders Section -->
+<section class="wonders">
+  <h2>Iconic Wonders</h2>
+  <p>Journey through three of the Philippines’ most magnificent natural treasures, each telling unique tales of heritage and beauty.</p>
+  <div class="cards">
+    <div class="card">
+      <img src="Images/banaue2.png" alt="Banaue Rice Terraces">
+      <div class="card-content">
+        <h3>Banaue Rice Terraces</h3>
+        <p>Hand-carved by Ifugao over 2000 years ago. Using sustainable methods passed down for generations.</p>
       </div>
-      <div class="stat-card">
-        <div class="stat-number">100+</div>
-        <div class="stat-label">Languages Spoken</div>
+    </div>
+    <div class="card">
+      <img src="Images/mayon.png" alt="Mayon Volcano">
+      <div class="card-content">
+        <h3>Mayon Volcano</h3>
+        <p>A perfect cone rising 2,463m above sea level. Famous for its near-symmetrical shape and legends.</p>
       </div>
-      <div class="stat-card">
-        <div class="stat-number">12M+</div>
-        <div class="stat-label">Annual Visitors</div>
-      </div>
-    </section>
-
-    <h2 class="section-title">Featured Destinations</h2>
-    <div class="cards-grid">
-      <div class="card">
-        <div class="card-image-wrapper">
-          <img src="images/banaue-terraces.jpg" alt="Banaue Rice Terraces" class="card-image">
-        </div>
-        <div class="card-content">
-          <h3>Banaue Rice Terraces</h3>
-          <p>Marvel at the 2,000-year-old rice terraces carved into the mountains by the Ifugao people, a UNESCO World Heritage Site.</p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-image-wrapper">
-          <img src="images/hero-volcano.jpg" alt="Palawan Beaches" class="card-image">
-        </div>
-        <div class="card-content">
-          <h3>Palawan Paradise</h3>
-          <p>Explore crystal-clear waters, stunning limestone cliffs, and pristine white sand beaches in the world's best island.</p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-image-wrapper">
-          <img src="images/banaue-terraces.jpg" alt="Manila Culture" class="card-image">
-        </div>
-        <div class="card-content">
-          <h3>Historic Manila</h3>
-          <p>Immerse yourself in centuries of history, from Spanish colonial architecture to modern urban culture.</p>
-        </div>
+    </div>
+    <div class="card">
+      <img src="Images/reef.png" alt="Reef">
+      <div class="card-content">
+        <h3>Tubbataha Reef</h3>
+        <p>UNESCO World Heritage marine paradise teeming with life beneath the seas.</p>
       </div>
     </div>
   </div>
+  <button class="filled">Explore All Wonders</button>
+</section>
 
-  <footer>
-    <p>&copy; 2025 Tara, Dayo. All rights reserved.</p>
-    <p>Discover the beauty of the Philippines</p>
-  </footer>
+<!-- Heritage Section -->
+<section class="heritage">
+  <h2>Preserve Our Heritage</h2>
+  <p>These wonders are not just destinations—they are the soul of our nation, connecting us to our ancestors and inspiring future generations.</p>
+  <button class="filled" onclick="window.location.href='gallery.html'">Explore More Wonders</button>
+
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 Tara, Dayo. All Rights Reserved.</p>
+  <p>Proudly Filipino | Cultural and Sustainable Web</p>
+</footer>
+
 </body>
 </html>
