@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tara, Dayo | Destinations</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://kit.fontawesome.com/a2e0e6ad7b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- NAVBAR (same as index.html) -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <span class="logo-text">Tara, Dayo</span>
+      </div>
+
+      <button class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="destination.html" aria-current="page">Destinations</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="culture.html">Culture</a></li>
+        <li><a href="index.html#about">About</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- end navbar -->
+
+  <!-- HERO -->
+  <section class="exp-hero">
+    <video class="hero-video" autoplay muted loop playsinline>
+            <source src="Images/video5.mp4" type="video/mp4">
+        </video>
+    <div class="exp-hero-overlay"></div>
+    <div class="exp-hero-text">
+      <h1 class="exp-hero-title">Unforgettable Experiences Await</h1>
+      <p class="exp-hero-subtitle">From adventure to culture, create memories that last a lifetime</p>
+    </div>
+  </section>
+
+  <!-- MAIN / FILTER -->
+  <main class="exp-main">
+    <div class="exp-container">
+      <h2 class="exp-heading">What Will You Experience?</h2>
+      <p class="exp-subheading">Choose your adventure and discover the many ways to explore the Philippines</p>
+
+      <!-- Tabs (styled like screenshot: pill outer, white active pill inside) -->
+      <div class="exp-filter-wrap" role="tablist" aria-label="Experience filters">
+        <div class="exp-filter-pill">
+          <button class="exp-tab-btn exp-tab-active" data-filter="all" role="tab" aria-selected="true">All Experiences</button>
+          <button class="exp-tab-btn" data-filter="adventure" role="tab" aria-selected="false">Adventure</button>
+          <button class="exp-tab-btn" data-filter="culture" role="tab" aria-selected="false">Culture &amp; Food</button>
+        </div>
+      </div>
+
+      <!-- Grid of cards -->
+      <section class="exp-grid" aria-live="polite">
+        <!-- Island Hopping (adventure) -->
+        <article class="exp-card" data-category="adventure">
+          <div class="exp-card-image">
+            <img class="exp-card-img" src="Images/islandhopping.jpeg" alt="Island Hopping">
+          </div>
+          <div class="exp-card-body">
+            <div class="exp-symbol">
+            <i class="fa-solid fa-water"></i> <!-- waves -->
+            </div>
+            <h3>Island Hopping</h3>
+            <p>Discover hidden beaches, lagoons, and pristine islands across the archipelago</p>
+            <ul>
+              <li>Private boat tours</li>
+              <li>Snorkeling spots</li>
+              <li>Beach picnics</li>
+              <li>Swimming in lagoons</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Mountain Trekking (adventure) -->
+        <article class="exp-card" data-category="adventure">
+          <div class="exp-card-image">
+            <img class="exp-card-img" src="Images/mountaintrek.jpg" alt="Mountain Trekking">
+          </div>
+          <div class="exp-card-body">
+            <div class="exp-symbol">
+            <i class="fa-solid fa-mountain"></i> <!-- waves -->
+            </div>
+            <h3>Mountain Trekking</h3>
+            <p>Hike through lush forests, rice terraces, and volcanic peaks</p>
+            <ul>
+              <li>Mt. Pulag sunrise</li>
+              <li>Rice terrace trails</li>
+              <li>Volcano viewing</li>
+              <li>Cloud forests</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Food Tours (adventure + culture) -->
+        <article class="exp-card" data-category="adventure culture">
+          <div class="exp-card-image">
+            <img class="exp-card-img" src="Images/food.webp" alt="Food Tours">
+          </div>
+          <div class="exp-card-body">
+            <div class="exp-symbol">
+            <i class="fa-solid fa-utensils"></i> <!-- waves -->
+            </div>
+            <h3>Food Tours</h3>
+            <p>Taste authentic Filipino cuisine from street food to fine dining</p>
+            <ul>
+              <li>Adobo &amp; Sinigang</li>
+              <li>Street food markets</li>
+              <li>Seafood feasts</li>
+              <li>Local delicacies</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Cultural Immersion (culture) -->
+        <article class="exp-card" data-category="culture">
+          <div class="exp-card-image">
+            <img class="exp-card-img" src="Images/culture.jpg" alt="Cultural Immersion">
+          </div>
+          <div class="exp-card-body">
+            <div class="exp-symbol">
+            <i class="fa-solid fa-people-group"></i> <!-- waves -->
+            </div>
+            <h3>Cultural Immersion</h3>
+            <p>Experience traditional Filipino life, festivals, and customs</p>
+            <ul>
+              <li>Local festivals</li>
+              <li>Traditional crafts</li>
+              <li>Village homestays</li>
+              <li>Dance workshops</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Photography Tours (culture) -->
+        <article class="exp-card" data-category="culture">
+          <div class="exp-card-image">
+            <img class="exp-card-img" src="Images/mayon1.webp" alt="Photography Tours">
+          </div>
+          <div class="exp-card-body">
+            <div class="exp-symbol">
+            <i class="fa-solid fa-camera"></i> <!-- waves -->
+            </div>
+            <h3>Photography Tours</h3>
+            <p>Capture stunning landscapes and vibrant street scenes</p>
+            <ul>
+              <li>Sunrise shoots</li>
+              <li>Underwater photography</li>
+              <li>Street photography</li>
+              <li>Drone views</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Beach Activities (adventure) -->
+        <article class="exp-card" data-category="adventure">
+          <div class="exp-card-image">
+            <img class="exp-card-img" src="Images/beachactivity.jpg" alt="Beach Activities">
+          </div>
+          <div class="exp-card-body">
+            <div class="exp-symbol">
+            <i class="fa-solid fa-umbrella-beach"></i> <!-- waves -->
+            </div>
+            <h3>Beach Activities</h3>
+            <p>Enjoy water sports, diving, and beach relaxation scenes</p>
+            <ul>
+              <li>Surfing lessons</li>
+              <li>Scuba diving</li>
+              <li>Kayaking</li>
+              <li>Beach volleyball</li>
+            </ul>
+          </div>
+        </article>
+      </section>
+    </div>
+  </main>
+
+<!-- FOOTER (same as index.html) -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>Tara, Dayo</h3>
+          <p>Your gateway to Philippine paradise. Discover the beauty, culture, and adventure of 7,641 islands.</p>
+        </div>
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="culture.html">Culture</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#blog">Travel Blog</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">YouTube</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Tara, Dayo. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
