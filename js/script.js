@@ -87,6 +87,11 @@ if (exploreBtn) {
   });
 }
 
+
+
+
+
+
 /*
   Experiences page script
   - unique class names prefixed with exp-
@@ -188,21 +193,23 @@ document.querySelectorAll('.culturecard, .tradition-card, .food-card').forEach(c
 });
 
 // === MINI MUSIC PLAYER ===
-const player = document.getElementById('music-player');
-const playBtn = document.getElementById('play-btn');
-const volumeSlider = document.getElementById('volume-slider');
+const player = document.getElementById("music-player");
+const playBtn = document.getElementById("play-btn");
+const volumeSlider = document.getElementById("volume-slider");
 
 if (player && playBtn && volumeSlider) {
   let isPlaying = true;
   player.volume = 0.7;
 
-  // enable autoplay after first click
-  document.addEventListener('click', () => {
-    player.play().catch(() => {});
-  }, { once: true });
+  document.addEventListener(
+    "click",
+    () => {
+      player.play().catch(() => {});
+    },
+    { once: true }
+  );
 
-  // play/pause toggle
-  playBtn.addEventListener('click', () => {
+  playBtn.addEventListener("click", () => {
     if (isPlaying) {
       player.pause();
       playBtn.textContent = "Play";
@@ -213,11 +220,30 @@ if (player && playBtn && volumeSlider) {
     isPlaying = !isPlaying;
   });
 
-  // volume control
-  volumeSlider.addEventListener('input', (e) => {
+  volumeSlider.addEventListener("input", (e) => {
     player.volume = e.target.value;
   });
 }
+
+// === DYNAMIC PAGE LOADING (PREVENTS RELOAD) ===
+const links = document.querySelectorAll(".nav-link");
+const content = document.getElementById("page-content");
+
+links.forEach((link) => {
+  link.addEventListener("click", async (e) => {
+    e.preventDefault();
+    const page = link.dataset.page;
+
+    if (page === "home") {
+      content.innerHTML = `<h1>Home</h1>`;
+    } else if (page === "about") {
+      content.innerHTML = `<h1>About</h1>`;
+    } else if (page === "contact") {
+      content.innerHTML = `<h1>Contact</h1>`;
+    }
+  });
+});
+
 
 // === Smooth Fade Scroll Animation (Safe & Isolated) ===
 (function() {
@@ -252,3 +278,130 @@ if (player && playBtn && volumeSlider) {
   });
 })();
 
+/*contact*/
+
+
+// FAQ Accordion
+const faqItems = document.querySelectorAll('.faq-item');
+
+faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    
+    question.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+        
+        // Close all FAQ items
+        faqItems.forEach(faq => {
+            faq.classList.remove('active');
+        });
+        
+        // Open clicked item if it wasn't active
+        if (!isActive) {
+            item.classList.add('active');
+        }
+    });
+});
+
+// Contact Form Submission
+const contactForm = document.getElementById('contactForm');
+
+contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    const formData = {
+        fullName: document.getElementById('fullName').value,
+        email: document.getElementById('email').value,
+        subject: document.getElementById('subject').value,
+        message: document.getElementById('message').value
+    };
+    
+    console.log('Contact Form Submitted:', formData);
+    
+    // Show success message
+    alert('Thank you for your message! We will get back to you within 24-48 hours.');
+    
+    // Reset form
+    contactForm.reset();
+});
+
+// Feedback Form Submission
+const feedbackForm = document.getElementById('feedbackForm');
+
+feedbackForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    const formData = {
+        name: document.getElementById('feedbackName').value,
+        email: document.getElementById('feedbackEmail').value,
+        feedbackType: document.querySelector('input[name="feedbackType"]:checked').value,
+        message: document.getElementById('feedbackMessage').value
+    };
+    
+    console.log('Feedback Form Submitted:', formData);
+    
+    // Show success message
+    alert('Thank you for your feedback! We appreciate you taking the time to help us improve.');
+    
+    // Reset form and close modal
+    feedbackForm.reset();
+    closeModalFunc();
+});
+
+
+// Observe all fade-in elements
+document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right').forEach(el => {
+    observer.observe(el);
+});
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// Add hover effect to info cards
+const infoCards = document.querySelectorAll('.infocard');
+infoCards.forEach(card => {
+    card.addEventListener('mouseenter', function() {
+        this.style.transition = 'all 0.3s ease';
+    });
+});
+
+// Add hover effect to social links
+const socialLinks = document.querySelectorAll('.social-link');
+socialLinks.forEach(link => {
+    link.addEventListener('mouseenter', function() {
+        this.style.transition = 'all 0.3s ease';
+    });
+});
+
+// Form input focus effects
+const formInputs = document.querySelectorAll('input, textarea, select');
+formInputs.forEach(input => {
+    input.addEventListener('focus', function() {
+        this.parentElement.style.transition = 'all 0.3s ease';
+    });
+});
+
+// Keyboard accessibility for modal
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && feedbackModal.classList.contains('active')) {
+        closeModalFunc();
+    }
+});
+
+// Initialize: Set initial state for FAQ items
+faqItems.forEach(item => {
+    const answer = item.querySelector('.faq-answer');
+    answer.style.maxHeight = '0';
+});
+
+console.log('Tara, Dayo Contact Page Loaded Successfully!');
