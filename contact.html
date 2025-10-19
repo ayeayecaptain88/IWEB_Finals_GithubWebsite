@@ -1,117 +1,334 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tara, Dayo</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Tara, Dayo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">Tara, Dayo</span>
+            </div>
+            
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destination.html" aria-current="page">Destinations</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="culture.html">Culture</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            
+        </div>
+    </nav>
 
-<!-- Navbar -->
-<nav>
-  <h1>Tara, Dayo</h1>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="gallery.html">Gallery</a></li>
-    <li><a href="#">Culture</a></li>
-    <li><a href="about.html" class="active">About</a></li>
-    <li><a href="#">Contact</a></li>
-  </ul>
-</nav>
+    <!-- Hero Section -->
+    <section class="cultureheritage fadescroll-section">
+        <div class="culturehero">
+            <img class="cultureimg" src="Images/contact.webp" alt="Contact">
+            <div class="cultureoverlay">
+            <h1>Get in Touch</h1>
+            <p>Have questions? We'd love to hear from you</p>
+            </div>
+        </div>
 
+    <!-- Contact Info Cards -->
+    <section class="contactinfo-section">
+        <div class="infocards">
+            <div class="infocard fade-in-up">
+                <div class="infoicon">✉️</div>
+                <h3 class="infotitle">Email Us</h3>
+                <p class="infodetail">hello@taradayo.org</p>
+                <p class="infosubtext">Send us an email anytime</p>
+            </div>
+            <div class="infocard fade-in-up" style="animation-delay: 0.1s;">
+                <div class="infoicon">📞</div>
+                <h3 class="infotitle">Call Us</h3>
+                <p class="infodetail">+63 956-830-8527</p>
+                <p class="infosubtext">Mon-Fri, 9AM to 6PM PHT</p>
+            </div>
+            <div class="infocard fade-in-up" style="animation-delay: 0.2s;">
+                <div class="infoicon">📍</div>
+                <h3 class="infotitle">Visit Us</h3>
+                <p class="infodetail">Manila, Philippines</p>
+                <p class="infosubtext">Our main office location</p>
+            </div>
+            <div class="infocard fade-in-up" style="animation-delay: 0.3s;">
+                <div class="infoicon">⏱️</div>
+                <h3 class="infotitle">Response Time</h3>
+                <p class="infodetail">24-48 hours</p>
+                <p class="infosubtext">Average response time</p>
+            </div>
+        </div>
+    </section>
 
-<!-- Hero Section -->
-<section class="hero">
-  <div class="slideshow">
-    <div class="slide fade" style="background-image: url('Images/BanaueRiceTerraces.png');"></div>
-    <div class="slide fade" style="background-image: url('Images/mayon.png');"></div>
-    <div class="slide fade" style="background-image: url('Images/palawan.png');"></div>
-  </div>
-  <div class="hero-content">
-    <h1>More Than Islands,<br>A Nation of Stories</h1>
-    <p>Discover the timeless beauty of the Philippines — from ancient terraces to pristine coral reefs, every site has heritage and natural significance.</p>
-    <div class="btns">
-      <button class="filled">Explore Wonders</button>
-      <button class="outlined">Get to Know Us</button>
-    </div>
-  </div>
-</section>
+    <!-- Main Content -->
+    <section class="maincontent">
+        <div class="contentcontainer">
+            <!-- Contact Form -->
+            <div class="form-section fade-in-left">
+                <h2 class="sectiontitle">Send Us a Message</h2>
+                <p class="sectionsubtitle">Fill out the form below and we'll get back to you as soon as possible</p>
+                
+                <form id="contactForm" class="contactform">
+                    <div class="formrow">
+                        <div class="formgroup">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" placeholder="Juan Dela Cruz" required>
+                        </div>
+                        <div class="formgroup">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" placeholder="juan@example.com" required>
+                        </div>
+                    </div>
+                    
+                    <div class="formgroup">
+                        <label for="subject">Subject *</label>
+                        <select id="subject" required>
+                            <option value="">Select a subject</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="booking">Booking Question</option>
+                            <option value="partnership">Partnership</option>
+                            <option value="feedback">Feedback</option>
+                        </select>
+                    </div>
+                    
+                    <div class="formgroup">
+                        <label for="message">Message *</label>
+                        <textarea id="message" rows="5" placeholder="Tell us how we can help you..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submitbtn">
+                        <span class="icon">✓</span> Send Message
+                    </button>
+                </form>
+            </div>
 
-<!-- Numbers Section -->
-<section class="numbers">
-  <h2>Philippines by Numbers</h2>
-  <p class="subtitle">A glimpse into our natural wealth</p>
-  <div class="stats">
-    <div class="stat">
-      <div class="icon">🏝️</div>
-      <h3>7,641</h3>
-      <p>Islands</p>
-    </div>
-    <div class="stat">
-      <div class="icon">🌿</div>
-      <h3>400+</h3>
-      <p>Protected Areas</p>
-    </div>
-    <div class="stat">
-      <div class="icon">🏛️</div>
-      <h3>2</h3>
-      <p>UNESCO Sites</p>
-    </div>
-    <div class="stat">
-      <div class="icon">🦅</div>
-      <h3>50+</h3>
-      <p>Endemic Species</p>
-    </div>
-  </div>
-</section>
+            <!-- Sidebar -->
+            <div class="sidebar fade-in-right">
+                <!-- Follow Us -->
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Follow Us</h3>
+                    <p class="sidebar-text">Stay updated with the latest Philippine destinations</p>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <span class="social-icon facebook">f</span>
+                            <div>
+                                <div class="social-name">Facebook</div>
+                                <div class="social-handle">@taradayo.ph</div>
+                            </div>
+                        </a>
+                        <a href="#" class="social-link">
+                            <span class="social-icon instagram">📷</span>
+                            <div>
+                                <div class="social-name">Instagram</div>
+                                <div class="social-handle">@taradayo.ph</div>
+                            </div>
+                        </a>
+                        <a href="#" class="social-link">
+                            <span class="social-icon twitter">🐦</span>
+                            <div>
+                                <div class="social-name">Twitter</div>
+                                <div class="social-handle">@taraDayoPH</div>
+                            </div>
+                        </a>
+                        <a href="#" class="social-link">
+                            <span class="social-icon messenger">💬</span>
+                            <div>
+                                <div class="social-name">Messenger</div>
+                                <div class="social-handle">m.me/taradayo</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
 
-<!-- Wonders Section -->
-<section class="wonders">
-  <h2>Iconic Wonders</h2>
-  <p>Journey through three of the Philippines’ most magnificent natural treasures, each telling unique tales of heritage and beauty.</p>
-  <div class="cards">
-    <div class="card">
-      <img src="Images/banaue2.png" alt="Banaue Rice Terraces">
-      <div class="card-content">
-        <h3>Banaue Rice Terraces</h3>
-        <p>Hand-carved by Ifugao over 2000 years ago. Using sustainable methods passed down for generations.</p>
+                <!-- Office Hours -->
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Office Hours</h3>
+                    
+                    <div class="hours-list">
+                        <div class="hours-item">
+                            <span>Monday - Friday</span>
+                            <span>9:00 AM - 6:00 PM</span>
+                        </div>
+                        <div class="hours-item">
+                            <span>Saturday</span>
+                            <span>10:00 AM - 3:00 PM</span>
+                        </div>
+                        <div class="hours-item">
+                            <span>Sunday</span>
+                            <span class="closed">Closed</span>
+                        </div>
+                        <div class="hours-note">*Philippine Time (PHT/UTC+8)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="faq-container">
+            <h2 class="faq-main-title">Frequently Asked Questions</h2>
+            <p class="faq-main-subtitle">Find quick answers to common questions</p>
+            
+            <div class="faq-list">
+                <div class="faq-item fade-in-up">
+                    <button class="faq-question">
+                        <span>What is Tara, Dayo?</span>
+                        <span class="faq-icon">›</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Tara, Dayo is a showcase platform dedicated to highlighting the beauty, culture, and wonders of the Philippines. We provide information and inspiration for those interested in exploring the Philippine archipelago.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in-up" style="animation-delay: 0.1s;">
+                    <button class="faq-question">
+                        <span>Do you offer booking services?</span>
+                        <span class="faq-icon">›</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>No, we are purely a showcase and information platform. We don't handle bookings or reservations. We recommend contacting local tour operators or the Department of Tourism for travel arrangements.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in-up" style="animation-delay: 0.2s;">
+                    <button class="faq-question">
+                        <span>How can I contribute content or photos?</span>
+                        <span class="faq-icon">›</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We'd love to feature your Philippine travel stories and photos! Please contact us through the form above with the subject 'Content Contribution' and we'll get back to you with our submission guidelines.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in-up" style="animation-delay: 0.3s;">
+                    <button class="faq-question">
+                        <span>Can you help plan my Philippine trip?</span>
+                        <span class="faq-icon">›</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>While we provide comprehensive information about destinations and experiences, we don't offer personalized trip planning services. However, our website contains detailed information to help you plan your own adventure!</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in-up" style="animation-delay: 0.4s;">
+                    <button class="faq-question">
+                        <span>How often is the content updated?</span>
+                        <span class="faq-icon">›</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We regularly update our content to ensure accuracy and add new destinations and experiences. Follow us on social media for the latest updates and featured locations.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in-up" style="animation-delay: 0.5s;">
+                    <button class="faq-question">
+                        <span>Can I use your photos for my project?</span>
+                        <span class="faq-icon">›</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Photos are subject to copyright. Please contact us with details about your project and intended use. We handle image licensing requests on a case-by-case basis.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Still Have Questions -->
+    <section class="still-questions-section">
+        <h2 class="questions-title">Still Have Questions?</h2>
+        <p class="questions-subtitle">We're here to help! Don't hesitate to reach out through any of our channels.</p>
+        
+        <div class="questions-actions">
+            <a href="mailto:info@taradayo.ph" class="question-action">
+                <span class="action-icon">✉️</span> Email Us
+            </a>
+            <a href="#" class="question-action">
+                <span class="action-icon">💬</span> Message on Facebook
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER (same as index.html) -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>Tara, Dayo</h3>
+          <p>A digital exhibit celebrating the natural wonders of the Philippines. Join us in preserving these treasures for future generations through awareness, education, and conservation action.</p>
+        </div>
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="destination.html">Destinations</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="culture.html">Culture</a></li>
+
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#blog">Travel Blog</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">YouTube</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Tara, Dayo. All rights reserved.</p>
       </div>
     </div>
-    <div class="card">
-      <img src="Images/mayon.png" alt="Mayon Volcano">
-      <div class="card-content">
-        <h3>Mayon Volcano</h3>
-        <p>A perfect cone rising 2,463m above sea level. Famous for its near-symmetrical shape and legends.</p>
-      </div>
+  </footer>
+
+  <!-- 🎵 MINI SPOTIFY-STYLE MUSIC PLAYER -->
+  <div class="music-widget">
+    <div class="music-cover">
+      <img src="Images/baganisong.png" alt="Album Art">
     </div>
-    <div class="card">
-      <img src="Images/reef.png" alt="Reef">
-      <div class="card-content">
-        <h3>Tubbataha Reef</h3>
-        <p>UNESCO World Heritage marine paradise teeming with life beneath the seas.</p>
+    <div class="music-info">
+      <h3 class="music-title">Bagani</h3>
+      <p class="music-artist">Anthony Castillo</p>
+
+      <audio id="music-player"
+        src="Images/Bagani - Anthony Castillo.mp3"
+        autoplay loop></audio>
+
+      <div class="controls">
+        <button id="play-btn">Pause</button>
+        <label for="volume-slider" class="volume-label">Volume:</label>
+        <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.7">
       </div>
     </div>
   </div>
-  <button class="filled">Explore All Wonders</button>
-</section>
 
-<!-- Heritage Section -->
-<section class="heritage">
-  <h2>Preserve Our Heritage</h2>
-  <p>These wonders are not just destinations—they are the soul of our nation, connecting us to our ancestors and inspiring future generations.</p>
-  <button class="filled" onclick="window.location.href='gallery.html'">Explore More Wonders</button>
 
-</section>
-
-<!-- Footer -->
-<footer>
-  <p>&copy; 2025 Tara, Dayo. All Rights Reserved.</p>
-  <p>Proudly Filipino | Cultural and Sustainable Web</p>
-</footer>
-
+    <script src="script.js"></script>
 </body>
 </html>
