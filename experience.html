@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Tara, Dayo | Destinations</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <script src="https://kit.fontawesome.com/a2e0e6ad7b.js" crossorigin="anonymous"></script>
 </head>
@@ -28,6 +29,7 @@
         <li><a href="experience.html">Experience</a></li>
         <li><a href="culture.html">Culture</a></li>
         <li><a href="index.html#about">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
   </nav>
@@ -191,7 +193,7 @@
       <div class="footer-content">
         <div class="footer-column">
           <h3>Tara, Dayo</h3>
-          <p>Your gateway to Philippine paradise. Discover the beauty, culture, and adventure of 7,641 islands.</p>
+          <p>A digital exhibit celebrating the natural wonders of the Philippines. Join us in preserving these treasures for future generations through awareness, education, and conservation action.</p>
         </div>
         <div class="footer-column">
           <h4>Quick Links</h4>
@@ -206,7 +208,7 @@
           <h4>Resources</h4>
           <ul>
             <li><a href="#about">About Us</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="contact.html">Contact</a></li>
             <li><a href="#blog">Travel Blog</a></li>
             <li><a href="#faq">FAQ</a></li>
           </ul>
@@ -226,6 +228,27 @@
       </div>
     </div>
   </footer>
+
+  <!-- 🎵 MINI SPOTIFY-STYLE MUSIC PLAYER -->
+  <div class="music-widget">
+    <div class="music-cover">
+      <img src="Images/baganisong.png" alt="Album Art">
+    </div>
+    <div class="music-info">
+      <h3 class="music-title">Bagani</h3>
+      <p class="music-artist">Anthony Castillo</p>
+
+      <audio id="music-player"
+        src="Images/Bagani - Anthony Castillo.mp3"
+        autoplay loop></audio>
+
+      <div class="controls">
+        <button id="play-btn">Pause</button>
+        <label for="volume-slider" class="volume-label">Volume:</label>
+        <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.7">
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
