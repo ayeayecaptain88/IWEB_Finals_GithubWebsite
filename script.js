@@ -1,30 +1,26 @@
-// Navbar scroll effect
-const navbar = document.getElementById('navbar');
-const hamburger = document.getElementById('hamburger');
-const navMenu = document.getElementById('navMenu');
+document.addEventListener("DOMContentLoaded", function() {
+  const hamburger = document.querySelector(".hamburger");
+  const navMenu = document.querySelector(".nav-menu");
+  const navbar = document.querySelector(".navbar");
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
-});
-
-// Mobile menu toggle
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
-});
-
-// Close menu when clicking on a link
-const navLinks = document.querySelectorAll('.nav-menu a');
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
+  if (hamburger && navMenu) {
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("active");
+      navMenu.classList.toggle("active");
     });
+  }
+
+  if (navbar) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
+      }
+    });
+  }
 });
+
 
 // Scroll animations
 const observerOptions = {
