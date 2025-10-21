@@ -278,6 +278,152 @@ links.forEach((link) => {
   });
 })();
 
+// About Page JavaScript - Unique naming to avoid conflicts
+
+// Hamburger Menu Toggle
+const aboutHamburger = document.getElementById('aboutHamburger');
+const aboutNavMenu = document.getElementById('aboutNavMenu');
+
+if (aboutHamburger && aboutNavMenu) {
+    aboutHamburger.addEventListener('click', () => {
+        aboutHamburger.classList.toggle('active');
+        aboutNavMenu.classList.toggle('active');
+    });
+
+    // Close menu when clicking on a link
+    const aboutNavLinks = aboutNavMenu.querySelectorAll('a');
+    aboutNavLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            aboutHamburger.classList.remove('active');
+            aboutNavMenu.classList.remove('active');
+        });
+    });
+}
+
+// Scroll Reveal Animation
+const aboutScrollReveal = () => {
+    const aboutRevealElements = document.querySelectorAll('.about-stat-card, .about-principle-card, .about-showcase-card, .about-text-content, .about-image-content');
+    
+    aboutRevealElements.forEach(element => {
+        element.classList.add('about-scroll-reveal');
+    });
+
+    const aboutObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('about-revealed');
+            }
+        });
+    }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
+    });
+
+    aboutRevealElements.forEach(element => {
+        aboutObserver.observe(element);
+    });
+};
+
+// Hover Animation for Cards
+const aboutInitHoverAnimations = () => {
+    const aboutCards = document.querySelectorAll('.about-stat-card, .about-principle-card, .about-showcase-card');
+    
+    aboutCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-8px) scale(1.02)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = '';
+        });
+    });
+};
+
+// Smooth Scroll for Navigation Links
+const aboutInitSmoothScroll = () => {
+    const aboutLinks = document.querySelectorAll('.about-nav-menu a[href^="#"]');
+    
+    aboutLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                const navHeight = document.querySelector('.about-nav').offsetHeight;
+                const targetPosition = targetElement.offsetTop - navHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+};
+
+// Navbar Hide on Scroll Down, Show on Scroll Up
+let aboutLastScroll = 0;
+const aboutNav = document.querySelector('.about-nav');
+
+const aboutHandleNavScroll = () => {
+    const aboutCurrentScroll = window.pageYOffset;
+    
+    if (aboutCurrentScroll <= 0) {
+        aboutNav.style.transform = 'translateY(0)';
+        return;
+    }
+    
+    if (aboutCurrentScroll > aboutLastScroll && aboutCurrentScroll > 100) {
+        // Scrolling down
+        aboutNav.style.transform = 'translateY(-100%)';
+    } else {
+        // Scrolling up
+        aboutNav.style.transform = 'translateY(0)';
+    }
+    
+    aboutLastScroll = aboutCurrentScroll;
+};
+
+// Parallax Effect for Hero Section
+const aboutHandleParallax = () => {
+    const aboutHeroImg = document.querySelector('.about-hero-img');
+    if (aboutHeroImg) {
+        const scrolled = window.pageYOffset;
+        const parallaxSpeed = 0.5;
+        aboutHeroImg.style.transform = `translateY(${scrolled * parallaxSpeed}px)`;
+    }
+};
+
+// Initialize all animations and interactions
+const aboutInit = () => {
+    aboutScrollReveal();
+    aboutInitHoverAnimations();
+    aboutInitSmoothScroll();
+    
+    // Add scroll event listeners
+    let aboutScrollTimeout;
+    window.addEventListener('scroll', () => {
+        // Throttle scroll events for performance
+        if (!aboutScrollTimeout) {
+            aboutScrollTimeout = setTimeout(() => {
+                aboutHandleNavScroll();
+                aboutHandleParallax();
+                aboutScrollTimeout = null;
+            }, 10);
+        }
+    });
+};
+
+// Run initialization when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', aboutInit);
+} else {
+    aboutInit();
+}
+
+
+
 /*contact*/
 
 
