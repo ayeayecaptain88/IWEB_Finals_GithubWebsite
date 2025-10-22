@@ -183,62 +183,54 @@ document.querySelectorAll('.culturecard, .tradition-card, .food-card').forEach(c
   card.addEventListener('mouseleave', () => card.style.transform = 'scale(1)');
 });
 
-// === MINI MUSIC PLAYER (PERSISTENT STATE) ===
+// ===============================
+// MINI MUSIC PLAYER
+// ===============================
 const player = document.getElementById("music-player");
 const playBtn = document.getElementById("play-btn");
 const volumeSlider = document.getElementById("volume-slider");
 
 if (player && playBtn && volumeSlider) {
-  // Load saved settings
-  let savedVolume = localStorage.getItem("musicVolume");
-  let savedPlaying = localStorage.getItem("musicPlaying");
+  // Restore last volume
+  const savedVolume = localStorage.getItem("musicVolume");
+  player.volume = savedVolume ? parseFloat(savedVolume) : 0.7;
+  volumeSlider.value = player.volume;
 
-  if (savedVolume) player.volume = parseFloat(savedVolume);
-  if (savedPlaying === "true") {
+  // Restore and maintain play state
+  const savedPlayState = localStorage.getItem("isMusicPlaying") === "true";
+
+  // If previously playing, resume automatically
+  if (savedPlayState) {
     player.play().catch(() => {});
     playBtn.textContent = "Pause";
   }
 
-  let isPlaying = savedPlaying === "true";
-
+  // Play/Pause button
   playBtn.addEventListener("click", () => {
-    if (isPlaying) {
-      player.pause();
-      playBtn.textContent = "Play";
-    } else {
+    if (player.paused) {
       player.play().catch(() => {});
       playBtn.textContent = "Pause";
+      localStorage.setItem("isMusicPlaying", "true");
+    } else {
+      player.pause();
+      playBtn.textContent = "Play";
+      localStorage.setItem("isMusicPlaying", "false");
     }
-    isPlaying = !isPlaying;
-    localStorage.setItem("musicPlaying", isPlaying);
   });
 
+  // Volume control
   volumeSlider.addEventListener("input", (e) => {
-    player.volume = e.target.value;
-    localStorage.setItem("musicVolume", e.target.value);
+    const volume = e.target.value;
+    player.volume = volume;
+    localStorage.setItem("musicVolume", volume);
+  });
+
+  // Save play state when page unloads
+  window.addEventListener("beforeunload", () => {
+    localStorage.setItem("isMusicPlaying", !player.paused);
+    localStorage.setItem("musicVolume", player.volume);
   });
 }
-
-// === DYNAMIC PAGE LOADING (WITHOUT RELOADING PLAYER) ===
-const links = document.querySelectorAll(".nav-link");
-const content = document.getElementById("page-content");
-
-links.forEach((link) => {
-  link.addEventListener("click", async (e) => {
-    e.preventDefault();
-    const page = link.dataset.page;
-
-    // Load content dynamically (does NOT touch player)
-    if (page === "home") {
-      content.innerHTML = `<h1>Home</h1>`;
-    } else if (page === "about") {
-      content.innerHTML = `<h1>About</h1>`;
-    } else if (page === "contact") {
-      content.innerHTML = `<h1>Contact</h1>`;
-    }
-  });
-});
-
 
 // === Smooth Fade Scroll Animation (Safe & Isolated) ===
 (function() {
