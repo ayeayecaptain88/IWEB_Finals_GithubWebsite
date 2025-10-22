@@ -926,7 +926,7 @@ html {
    READY TO EXPLORE STRIP
    ========================= */
 .dest-ready-strip {
-  background: #1a202c; /* very dark navy as in screenshot */
+  background: #1a202c; 
   color: #eef0f5;
   padding: 4.5rem 0 3.5rem;
   text-align: center;
@@ -965,7 +965,7 @@ html {
 
 .ready-button {
   display: inline-block;
-  background: #eef2f7; /* light pill */
+  background: #eef2f7; 
   color: #0f172a;
   padding: 0.85rem 1.4rem;
   border-radius: 10px;
@@ -995,7 +995,7 @@ html {
   .ready-button { padding: 0.7rem 1rem; font-size: 0.95rem; }
 }
 
-/* EXPERIENCES - unique exp- prefix to avoid conflicts */
+/* EXPERIENCES */
 
 /* HERO */
 .exp-hero {
@@ -1047,7 +1047,7 @@ html {
 }
 .exp-tab-btn:hover { background: rgba(255,255,255,0.7); transform: translateY(-1px); }
 
-/* ACTIVE: white inner pill with subtle inset border (matches screenshot) */
+
 .exp-tab-active {
   background: #ffffff;
   box-shadow: inset 0 0 0 4px rgba(229,231,235,0.9);
@@ -1104,7 +1104,7 @@ html {
 .exp-card:hover { transform: translateY(-6px); box-shadow: 0 14px 32px rgba(18,24,37,0.09); }
 .exp-card:hover .exp-card-img { transform: scale(1.06); }
 
-/* HIDE/SHOW EFFECT when filtering - smoother with scale and translate */
+
 .exp-hidden {
   opacity: 0;
   transform: scale(0.98) translateY(14px);
@@ -1118,7 +1118,7 @@ html {
   transition: opacity 420ms cubic-bezier(.2,.9,.2,1), transform 420ms cubic-bezier(.2,.9,.2,1);
 }
 
-/* Accessibility focus */
+
 .exp-tab-btn:focus { outline: 3px solid rgba(59,130,246,0.18); outline-offset: 2px; }
 
 .exp-symbol {
@@ -1377,12 +1377,12 @@ html {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* === Smooth Page Scrolling & Section Fade Animation === */
+
 html {
   scroll-behavior: smooth;
 }
 
-/* Unique fade scroll animation classes */
+
 .fadescroll-section {
   opacity: 0;
   transform: translateY(30px);
@@ -2040,7 +2040,7 @@ html {
 }
 
 /* Sidebar */
-/* Sidebar */
+
 .sidebar {
   flex: 1;
     opacity: 0;
