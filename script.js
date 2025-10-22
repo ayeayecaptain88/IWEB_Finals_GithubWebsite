@@ -36,7 +36,7 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Add animate class to sections
+
 const sections = document.querySelectorAll('section:not(.hero)');
 sections.forEach(section => {
     section.classList.add('animate');
@@ -66,9 +66,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 
-// =======================
+
 // SMOOTH SCROLL FOR HERO BUTTON
-// =======================
+
 const exploreBtn = document.querySelector('.dest-btn[href="#dest-explore"]');
 if (exploreBtn) {
   exploreBtn.addEventListener("click", (e) => {
@@ -90,41 +90,39 @@ if (exploreBtn) {
 
 /*
   Experiences page script
-  - unique class names prefixed with exp-
-  - sets up tab filtering and show/hide animation
 */
 
 document.addEventListener('DOMContentLoaded', function () {
-  // elements
+
   const tabs = Array.from(document.querySelectorAll('.exp-tab-btn'));
   const cards = Array.from(document.querySelectorAll('.exp-card'));
 
-  // helper: show a card (with small fade in)
+  
   function showCard(el) {
     el.classList.remove('exp-hidden');
-    // ensure it's display:block (some external CSS might hide it)
+   
     el.style.display = 'block';
-    // add small delay to allow transition
+    
     requestAnimationFrame(() => {
       el.classList.add('exp-visible');
     });
   }
 
-  // helper: hide a card (with fade out)
+ 
   function hideCard(el) {
     el.classList.remove('exp-visible');
     el.classList.add('exp-hidden');
-    // after transition ends, set display none to remove from layout
+   
     const cleanup = () => {
       el.style.display = 'none';
       el.removeEventListener('transitionend', cleanup);
     };
-    // if transition doesn't fire (rare), still enforce after 300ms
+ 
     el.addEventListener('transitionend', cleanup);
     setTimeout(cleanup, 350);
   }
 
-  // initialize: make all cards visible (defensive against other CSS)
+
   cards.forEach(c => {
     c.classList.remove('exp-hidden');
     c.classList.add('exp-visible');
@@ -134,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // tab click handler
   tabs.forEach(tab => {
     tab.addEventListener('click', function () {
-      // active tab visuals & aria
+      
       tabs.forEach(t => {
         t.classList.remove('exp-tab-active');
         t.setAttribute('aria-selected', 'false');
@@ -144,10 +142,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       const filter = tab.getAttribute('data-filter');
 
-      // filter logic:
-      // All -> show all
-      // adventure -> show island, mountain, food, beach (cards with 'adventure')
-      // culture -> show food, cultural immersion, photography (cards with 'culture')
+     
       cards.forEach(card => {
         const catAttr = (card.getAttribute('data-category') || '').trim();
         const cats = catAttr === '' ? [] : catAttr.split(/\s+/);
@@ -161,7 +156,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // keyboard accessibility: left/right arrow moves between tabs
+
   let focusedIndex = tabs.findIndex(t => t.classList.contains('exp-tab-active'));
   tabs.forEach((t, i) => {
     t.addEventListener('keydown', (ev) => {
@@ -182,7 +177,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-// Simple hover interactivity for smooth feel
+
 document.querySelectorAll('.culturecard, .tradition-card, .food-card').forEach(card => {
   card.addEventListener('mouseenter', () => card.style.transform = 'scale(1.03)');
   card.addEventListener('mouseleave', () => card.style.transform = 'scale(1)');
@@ -397,10 +392,10 @@ const aboutInit = () => {
     aboutInitHoverAnimations();
     aboutInitSmoothScroll();
     
-    // Add scroll event listeners
+   
     let aboutScrollTimeout;
     window.addEventListener('scroll', () => {
-        // Throttle scroll events for performance
+  
         if (!aboutScrollTimeout) {
             aboutScrollTimeout = setTimeout(() => {
                 aboutHandleNavScroll();
@@ -432,12 +427,12 @@ faqItems.forEach(item => {
     question.addEventListener('click', () => {
         const isActive = item.classList.contains('active');
         
-        // Close all FAQ items
+        
         faqItems.forEach(faq => {
             faq.classList.remove('active');
         });
         
-        // Open clicked item if it wasn't active
+        
         if (!isActive) {
             item.classList.add('active');
         }
